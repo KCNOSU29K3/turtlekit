@@ -79,12 +79,15 @@ def draw_rectangle(width:int, length:int, start_angle:int, start_at:tuple, color
     turt.left(start_angle)
     turt.pendown()
     if infill is True:
+        turt.fillcolor(color)
+        turt.begin_fill()
         for i in range(2):
             turt.forward(width)
             turt.left(90)
             turt.forward(length)
             if i == 0:
                 turt.left(90)
+        turt.end_fill()
     else:
         for i in range(2):
             turt.forward(width)
@@ -129,7 +132,7 @@ def draw_equilateral_triangle(side_length:int, start_angle:int, start_at:tuple, 
         for i in range(3):
             turt.forward(side_length)
             turt.left(120)
-        turt.endfill()
+        turt.end_fill()
     else:
         for i in range(3):
             turt.forward(side_length)
@@ -171,7 +174,7 @@ def draw_octagon(side_length:int, start_angle:int, start_at:tuple, color, infill
         for i in range(8):
             turt.forward(side_length)
             turt.left(45)
-        turt.endfill()
+        turt.end_fill()
     else:
         for i in range(8):
             turt.forward(side_length)
@@ -213,7 +216,7 @@ def draw_hexagon(side_length:int, start_angle:int, start_at:tuple, color, infill
         for i in range(6):
             turt.forward(side_length)
             turt.left(60)
-        turt.endfill()
+        turt.end_fill()
     else:
         for i in range(6):
             turt.forward(side_length)
@@ -259,8 +262,20 @@ def draw_n_side_shape(num_sides:int, side_length:int, start_angle:int, start_at:
         for i in range(num_sides):
             turt.forward(side_length)
             turt.left(angle)
-        turt.endfill()
+        turt.end_fill()
     else:
         for i in range(num_sides):
             turt.forward(side_length)
             turt.left(angle)
+
+
+
+def write_to_screen(write_at:tuple, text:str, size:int):
+    turt = Turtle()
+    turt.hideturtle()
+    turt.speed(0)
+    turt.penup()
+    turt.goto(write_at)
+    turt.write(text, font = ("arial", size, "normal"))
+    
+    pass
