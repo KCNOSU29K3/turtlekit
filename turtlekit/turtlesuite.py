@@ -270,12 +270,11 @@ def draw_n_side_shape(num_sides:int, side_length:int, start_angle:int, start_at:
 
 
 
-def write_to_screen(write_at:tuple, text:str, size:int):
+def write_to_screen(write_at:tuple, text:str, color:str, size:int):
     turt = Turtle()
     turt.hideturtle()
+    turt.color(color)
     turt.speed(0)
     turt.penup()
     turt.goto(write_at)
     turt.write(text, font = ("arial", size, "normal"))
-    
-    pass
