@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = "0.44"
+VERSION = "0.48"
 DESCRIPTION = "A module for easily drawing shapes in python."
 setup(
     name= "turtlekit",
@@ -10,6 +10,7 @@ setup(
     description = DESCRIPTION,
     long_description = open("turtlekit/README.md").read(),
     long_description_content_type="text/markdown",
+    scripts=["turtlekit/turtlesuite.py", "turtlekit/__init__.py"],
     packages = find_packages(),
     install_requires = ["turtle"],
     keywords=["python", "Turtle"],
