@@ -277,4 +277,4 @@ def write_to_screen(write_at:tuple, text:str, color:str, size:int):
     turt.speed(0)
     turt.penup()
     turt.goto(write_at)
-    turt.write(text, font = ("arial", size, "normal"))
+    turt.write(text, font = ("arial", size, "normal"), align="center")
